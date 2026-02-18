@@ -9,7 +9,7 @@ app.use((req, res, next) => {
   next();
 });
 
-app.post('/log-visit', (req, res) => {
+app.post('/load', (req, res) => {
   const ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress;
   const now = new Date();
   const date = now.toLocaleDateString('en-US', { timeZone: 'America/Halifax', year: 'numeric', month: 'long', day: 'numeric' });
@@ -17,5 +17,6 @@ app.post('/log-visit', (req, res) => {
   console.log(`Visitor IP: ${ip} | Date: ${date} | Time: ${time}`);
   res.sendStatus(200);
 });
+
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
