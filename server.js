@@ -50,3 +50,6 @@ app.post('/load', (req, res) => {
   console.log(`Page: ${page} | IP: ${ip} | Device: ${device} | Browser: ${browser} | Date: ${date} | Time: ${time}`);
   res.sendStatus(200);
 });
+
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
